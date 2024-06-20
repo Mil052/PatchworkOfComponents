@@ -1,0 +1,32 @@
+.sectionContainer{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #F9F4ED;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  text-align: left;
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+@media (min-width: 480px) {
+  .sectionTitle {
+    font-size: 3rem;
+    margin: 3rem 10%;
+  }
+}
+
+@media (min-width: 768px) {
+  .sectionTitle {
+    font-size: 72px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sectionTitle {
+    font-size: 6rem;
+  }
+}

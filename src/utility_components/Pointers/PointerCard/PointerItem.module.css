@@ -1,0 +1,193 @@
+.pointerItemContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.normal,
+.reverse {
+  flex-direction: column;
+}
+
+.itemImg {
+  object-fit: cover;
+  flex: 0 0 15rem;
+  display: block;
+  min-width: 20rem;
+  opacity: 0;
+}
+
+.normal .itemImg {
+  animation: slideLeft 1s ease-in 1 forwards;
+  animation-play-state: paused;
+}
+
+.reverse .itemImg {
+  animation: slideRight 1s ease-in 1 forwards;
+  animation-play-state: paused;
+}
+
+.reverse svg {
+  transform: scaleX(-1);
+}
+
+.arrowhead {
+  display: none;
+}
+
+.itemDescription {
+  position: relative;
+  flex: 0 1 15rem;
+  min-width: 20rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.itemTitle {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 24px;
+  opacity: 0;
+}
+
+.normal .itemTitle {
+  margin-right: 2rem;
+  text-align: right;
+  animation: bounceFromRight 500ms ease-in 500ms 1 forwards;
+  animation-play-state: paused;
+}
+
+.reverse .itemTitle {
+  margin-left: 2rem;
+  text-align: left;
+  animation: bounceFromLeft 1s ease-in 500ms 1 forwards;
+  animation-play-state: paused;
+}
+
+.itemText {
+  font-family: var(--font-sans-serif);
+  font-weight: 400;
+  font-size: 18px;
+  text-align: justify;
+  width: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceFromLeft {
+  0% {
+    transform: translateX(-5rem);
+    opacity: 0;
+  }
+  75% {
+    transform: translateX(1rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceFromRight {
+  0% {
+    transform: translateX(5rem);
+    opacity: 0;
+  }
+  75% {
+    transform: translateX(-1rem);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 480px) {
+  .itemTitle {
+    font-size: 28px;
+  }
+
+  .itemText {
+    font-size: 20px;
+ }
+}
+
+@media (min-width: 768px) {
+  .pointerItemContainer {
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+
+  .normal {
+    flex-direction: row;
+  }
+
+  .reverse {
+    flex-direction: row-reverse;
+  }
+
+  .arrowhead {
+    display: unset;
+  }
+
+  .itemImg {
+    flex: 0 1 30rem;
+  }
+
+  .itemDescription {
+    flex: 0 1 30rem;
+  }
+
+  .itemTitle {
+    font-size: 24px;
+  }
+
+  .itemText {
+    margin-top: 1rem;
+    font-size: 18px;
+  }
+
+  .normal .itemText {
+    margin-left: auto;
+    margin-right: 0;
+  }
+  
+  .reverse .itemText {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .itemTitle {
+    font-size: 28px;
+  }
+
+  .itemText {
+    width: 80%;
+    font-size: 20px;
+  }
+}

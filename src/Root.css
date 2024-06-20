@@ -1,0 +1,31 @@
+.root-layout {
+  text-align: center;
+}
+
+.root-layout-header {
+  padding: 2rem;
+  border-bottom: 1px solid #a1773d;
+}
+
+.root-layout-header h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.root-layout-footer {
+  border-top: 1px solid #a1773d;
+  padding: 1rem 2rem;
+}
+
+.root-layout-footer h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .root-layout-header h1 {
+    font-size: 2rem;
+  }
+}
